@@ -23,8 +23,7 @@ jobs:
           ssh -o StrictHostKeyChecking=no ubuntu@47.129.189.55 << 'EOF'
             cd projectUTSFrontEnd
             sudo git pull origin main
-            # Restart Nginx or any other service if needed
-            sudo systemctl restart nginx
+            # NODE_OPTIONS=--openssl-legacy-provider ng serve --host 0.0.0.0
           EOF
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
