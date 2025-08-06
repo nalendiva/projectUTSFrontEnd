@@ -1,54 +1,123 @@
 .register-container {
-  padding: 24px 16px;
+  min-height: 100vh;
+  padding: 32px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+
   .form-container {
-    max-width: 475px;
-    padding: 24px 16px;
-    margin: 0 auto;
-    border-radius: 3px;
     background-color: #fff;
-    > h2 {
+    padding: 36px 28px;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+
+    >h2 {
       text-align: center;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
+      font-size: 24px;
+      color: #333;
     }
-    > .error-container {
+
+    >.error-container {
       padding: 12px;
-      margin: 0 0 16px;
-      color: #fff;
-      background-color: rgb(248, 51, 51);
+      margin-bottom: 16px;
+      background-color: #f44336;
+      color: white;
       border-radius: 4px;
+      font-size: 14px;
     }
-    > form {
-      > .🤪 {
+
+    form {
+      >.grid-name {
         display: grid;
-        grid-column-gap: 12px;
         grid-template-columns: 1fr 1fr;
-        margin-bottom: 24px;
+        gap: 16px;
+        margin-bottom: 20px;
       }
-      > .✅ {
+
+      .input-container {
+        margin-bottom: 16px;
+
+        >label {
+          font-size: 14px;
+          margin-bottom: 6px;
+          display: block;
+          color: #555;
+        }
+
+        >input {
+          width: 100%;
+          padding: 10px 12px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          transition: 0.2s ease;
+
+          &:focus {
+            border-color: #1890ff;
+            box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.15);
+            outline: none;
+          }
+        }
+      }
+
+      >.✅ {
         margin-bottom: 32px;
-        > .checkbox-container {
+
+        >.checkbox-container {
           display: flex;
           align-items: center;
           margin-bottom: 12px;
-          > input {
+
+          >input {
             width: auto;
             margin-right: 12px;
           }
-          > span {
+
+          >span {
             font-size: 0.75rem;
           }
         }
       }
-      > .cta-container {
+
+      >.cta-container {
         text-align: center;
-        > button[type="submit"] {
-          height: 52px;
+
+        >button[type="submit"] {
           width: 100%;
-          padding: 0px 30px;
-          margin-bottom: 12px;
+          height: 48px;
+          font-size: 16px;
+          background-color: #1890ff;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #1677cc;
+          }
         }
-        > div {
-          text-align: left;
+
+        >div {
+          margin-top: 12px;
+          font-size: 14px;
+          text-align: center;
+
+          a {
+            color: #1890ff;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
         }
       }
     }
@@ -58,23 +127,10 @@
 @media screen and (min-width: 768px) {
   .register-container {
     padding: 48px 16px 240px;
-    // background-color: #f5f5f8;
-    .form-container {
-      padding: 36px;
-      border: 1px solid #ccc;
-    }
-  }
-}
 
-.input-container {
-  margin-bottom: 12px;
-  > label {
-    font-size: 0.875rem;
-    display: inline-block;
-    margin-bottom: 6px;
-  }
-  > input {
-    padding: 10px 12px;
-    width: 100%;
+    .form-container {
+      padding: 40px;
+      border: 1px solid #ddd;
+    }
   }
 }
